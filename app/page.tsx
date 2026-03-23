@@ -1,4 +1,4 @@
-// app/page.tsx
+
 'use client'
 
 import { useState } from 'react'
@@ -17,7 +17,7 @@ const projects: Project[] = [
   { id: 'p4', title: 'Project Delta', short: 'Een korte beschrijving van Project Delta.' },
 ]
 
-// Basit helper om GA event atmak
+
 function sendGtagEvent(name: string, params: Record<string, any> = {}) {
   if (typeof window !== 'undefined' && (window as any).gtag) {
     try {
