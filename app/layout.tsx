@@ -18,6 +18,11 @@ export default function RootLayout({
       <body className="bg-[#050505] text-white">
         <GlobalNavbar />
         
+        {/* Floating Mobile CTA */}
+        <Link href="/contact" className="md:hidden fixed bottom-24 right-4 z-40 bg-white text-black px-6 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(255,255,255,0.2)] flex items-center gap-2 hover:scale-105 transition-transform">
+          Let's talk 👋
+        </Link>
+        
         {children}
       </body>
       <GoogleAnalytics gaId="G-655WEKJH8K" />
