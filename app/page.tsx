@@ -38,10 +38,10 @@ export default function Page() {
       {/* Header Section */}
       <section className="px-6 py-40 flex flex-col items-center justify-center text-center mt-10">
         <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest uppercase text-gray-300">
-          Design Portfolio
+          Interaction Designer
         </div>
         <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
-          Interaction Designer
+          Gülpembe Çolak
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
           Hi there! I'm Gülpembe. I design interactive solutions that enhance user experience, seamlessly blending visual aesthetics with powerful data.
