@@ -32,6 +32,13 @@ export default function GlobalNavbar() {
           {isActive('/projecten') && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-white rounded-full animate-in fade-in zoom-in duration-300"></span>}
         </Link>
         <Link 
+          href="/about" 
+          className={`relative py-1 transition-all duration-300 ${isActive('/about') ? 'text-white font-black' : 'text-gray-500 font-semibold hover:text-white'}`}
+        >
+          About
+          {isActive('/about') && <span className="absolute -bottom-2 left-0 w-full h-[2px] bg-white rounded-full animate-in fade-in zoom-in duration-300"></span>}
+        </Link>
+        <Link 
           href="/contact" 
           className={`relative py-1 transition-all duration-300 ${isActive('/contact') ? 'text-white font-black' : 'text-gray-500 font-semibold hover:text-white'}`}
         >
