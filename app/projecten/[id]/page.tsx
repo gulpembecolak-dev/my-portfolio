@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-export default function ProjectDetail({ params }: { params: { id: string } }) {
+export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params
   // We can derive title from the param for demonstration
-  const title = params.id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
-
+  const title = resolvedParams.id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
   return (
     <main className="min-h-screen pt-40 px-6 bg-[#050505] flex flex-col items-center">
       <div className="max-w-4xl w-full">
