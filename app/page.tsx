@@ -104,7 +104,7 @@ export default function Page() {
       <section className="px-6 py-32 flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#050505] to-[#111]">
         <div className="max-w-3xl mx-auto px-8 py-16 bg-white/[0.03] border border-white/10 rounded-3xl backdrop-blur-sm relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none opacity-50"></div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight relative z-10">Klaar om samen te werken?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight relative z-10">Ready to collaborate?</h2>
           <p className="text-gray-400 mb-10 text-lg relative z-10">
             Whether you have a new project in mind or just want to say hi, feel free to reach out. I'm always excited to explore new horizons in design together!
           </p>
@@ -113,7 +113,7 @@ export default function Page() {
             onClick={() => sendGtagEvent('form_start')}
             className="inline-block relative z-10 px-10 py-5 rounded-full bg-white text-black font-extrabold tracking-widest uppercase hover:scale-105 hover:bg-gray-200 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
           >
-            Neem contact op
+            Get in touch
           </Link>
         </div>
       </section>

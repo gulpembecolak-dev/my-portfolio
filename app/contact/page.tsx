@@ -22,9 +22,9 @@ export default function ContactPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Bericht verzonden!</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Message sent!</h2>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Bedankt voor je bericht! Ik neem zo snel mogelijk contact met je op.
+              Thank you for your message! I will get back to you as soon as possible.
             </p>
           </div>
         ) : (
