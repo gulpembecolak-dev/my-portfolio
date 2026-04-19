@@ -1,126 +1,119 @@
 // app/page.tsx
-'use client'
-
-import { useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const projects = [
-  { id: 'p1', title: 'Project Alpha', short: 'Een korte beschrijving van Project Alpha.' },
-  { id: 'p2', title: 'Project Beta', short: 'Een korte beschrijving van Project Beta.' },
-  { id: 'p3', title: 'Project Gamma', short: 'Een korte beschrijving van Project Gamma.' },
+  { 
+    id: 'p1', 
+    title: 'Project Alpha', 
+    short: 'Sleek mobile app UI interaction design showcase',
+    image: '/project1.png'
+  },
+  { 
+    id: 'p2', 
+    title: 'Project Beta', 
+    short: 'Modern web dashboard data visualization mockup',
+    image: '/project2.png'
+  },
+  { 
+    id: 'p3', 
+    title: 'Project Gamma', 
+    short: 'E-commerce fashion website design mockup',
+    image: '/project3.png'
+  },
 ]
 
-function sendGtagEvent(name: string, params: Record<string, any> = {}) {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', name, params)
-  }
-}
-
 export default function Page() {
-  const [isContactOpen, setContactOpen] = useState(false)
-  const [contactName, setContactName] = useState('')
-  const [contactMessage, setContactMessage] = useState('')
-
-  function handleProjectClick(p: typeof projects[0]) {
-    sendGtagEvent('project_click', { project_id: p.id, project_title: p.title })
-    alert(`${p.title} geopend.`)
-  }
-
-  function openContact() {
-    sendGtagEvent('contact_open')
-    setContactOpen(true)
-  }
-
-  function submitContact(e: React.FormEvent) {
-    e.preventDefault()
-    sendGtagEvent('contact_submit', { name: contactName?.slice(0,20) })
-    alert('Bedankt! Je bericht is verzonden.')
-    setContactOpen(false)
-  }
-
   return (
-    <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center px-6 py-20">
+    <main className="min-h-screen bg-[#050505] text-white flex flex-col font-sans">
       
-      {/* Header - İlk tasarımdaki gibi sade */}
-      <header className="text-center mb-20">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Gülpembe Çolak - Portfolio</h1>
-        <p className="text-gray-400 max-w-xl mx-auto text-lg leading-relaxed">
-          Merhaba! Ben Gülpembe. Bu site, User Research ödevim için 
-          Next.js ve Google Analytics kullanılarak oluşturulmuştur.
+      {/* Header Section */}
+      <section className="px-6 py-40 flex flex-col items-center justify-center text-center mt-10">
+        <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold tracking-widest uppercase text-gray-300">
+          Interaction Designer
+        </div>
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+          Gülpembe Çolak
+        </h1>
+        <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
+          Merhaba! Ben Gülpembe. Kullanıcı deneyimini güçlendiren, görsel estetik ile veriyi buluşturan etkileşimli çözümler tasarlıyorum.
         </p>
-      </header>
+      </section>
 
-      {/* 3 Column Layout - İlk tasarımdaki yapı */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl w-full border-t border-gray-800 pt-12">
-        
-        {/* Projelerim Bölümü */}
-        <section>
-          <h2 className="text-2xl font-bold mb-6">Projecten</h2>
-          <div className="space-y-6">
+      {/* Projects Grid Section (3 Columns) */}
+      <section className="px-6 py-24 bg-[#0a0a0a] border-t border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Projecten</h2>
+            <p className="text-gray-400 max-w-xl text-center mb-8">Een selectie van mijn recente werk in digitaal design, UI/UX en data visualisatie.</p>
+            <Link href="/projecten" className="text-sm font-bold uppercase tracking-widest border-b border-gray-600 pb-1 text-gray-400 hover:text-white hover:border-white transition-colors">
+              Alle Projecten Bekijken
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((p) => (
               <div 
                 key={p.id} 
-                onClick={() => handleProjectClick(p)}
-                className="cursor-pointer border-b border-transparent hover:border-white transition-all pb-2"
+                className="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-white/5"
               >
-                <h3 className="font-medium">{p.title}</h3>
-                <p className="text-sm text-gray-500 mt-1">{p.short}</p>
+                {/* Image Placeholder / Visual */}
+                <div className="relative aspect-video w-full overflow-hidden bg-black border-b border-white/10">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10"></div>
+                  <Image 
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                
+                {/* Card Content */}
+                <div className="p-8 flex flex-col flex-grow">
+                  <h3 className="text-2xl font-bold mb-3">{p.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed flex-grow mb-8">
+                    {p.short}
+                  </p>
+                  
+                  {/* Link Button per project */}
+                  <Link 
+                    href={`/projecten/${p.id}`}
+                    className="w-full py-4 rounded-xl bg-white text-black font-bold text-sm tracking-wide hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
+                  >
+                    Bekijk project
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
-        </section>
-
-        {/* Hakkımda Bölümü */}
-        <section>
-          <h2 className="text-2xl font-bold mb-6">Over mij</h2>
-          <p className="text-gray-400 text-sm leading-relaxed">
-            Kullanıcı deneyimi ve veri analizi konusundaki yolculuğum hakkında bilgi edinin. 
-            Design meets data.
-          </p>
-        </section>
-
-        {/* İletişim Bölümü */}
-        <section>
-          <h2 className="text-2xl font-bold mb-6">Contact</h2>
-          <p className="text-gray-400 text-sm mb-6">Benimle iletişime geçmek için bu bölümü kullanabilirsiniz.</p>
-          <button 
-            onClick={openContact}
-            className="border border-white px-6 py-2 hover:bg-white hover:text-black transition-all text-sm font-bold"
-          >
-            NEEM CONTACT OP
-          </button>
-        </section>
-
-      </div>
-
-      {/* Contact Modal - Siyah Beyaz Tema */}
-      {isContactOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4">
-          <div className="bg-zinc-900 border border-gray-800 rounded-none w-full max-w-lg p-8">
-            <h3 className="text-2xl font-bold mb-6">Contact</h3>
-            <form onSubmit={submitContact} className="space-y-4">
-              <input
-                placeholder="Naam"
-                className="w-full bg-black border border-gray-800 px-4 py-3 text-white focus:border-white outline-none"
-                required
-                onChange={(e) => setContactName(e.target.value)}
-              />
-              <textarea
-                placeholder="Bericht"
-                className="w-full bg-black border border-gray-800 px-4 py-3 text-white focus:border-white outline-none h-32"
-                required
-              />
-              <div className="flex justify-end gap-4 pt-4">
-                <button type="button" onClick={() => setContactOpen(false)} className="text-sm uppercase tracking-widest">Annuleren</button>
-                <button type="submit" className="bg-white text-black px-8 py-3 text-sm font-bold uppercase tracking-widest">Verzenden</button>
-              </div>
-            </form>
-          </div>
         </div>
-      )}
+      </section>
 
-      <footer className="mt-32 text-[10px] text-gray-700 uppercase tracking-[0.2em]">
-        &copy; 2026 Gülpembe Çolak | Research in Progress
+      {/* Massive CTA Section Bottom */}
+      <section className="px-6 py-32 flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#050505] to-[#111]">
+        <div className="max-w-3xl mx-auto px-8 py-16 bg-white/[0.03] border border-white/10 rounded-3xl backdrop-blur-sm relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none opacity-50"></div>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight relative z-10">Klaar om samen te werken?</h2>
+          <p className="text-gray-400 mb-10 text-lg relative z-10">
+            İster yeni bir proje, ister sadece bir "merhaba" demek için iletişime geçin. Tasarımda yeni ufuklar keşfetmek için sabırsızlanıyorum.
+          </p>
+          <Link 
+            href="/contact"
+            className="inline-block relative z-10 px-10 py-5 rounded-full bg-white text-black font-extrabold tracking-widest uppercase hover:scale-105 hover:bg-gray-200 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
+          >
+            Neem contact op
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 text-center text-[10px] text-gray-600 uppercase tracking-[0.2em] border-t border-white/5 bg-[#050505]">
+        &copy; 2026 Gülpembe Çolak | Interaction Designer
       </footer>
+
     </main>
   )
 }
