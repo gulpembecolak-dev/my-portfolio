@@ -15,8 +15,11 @@ export default function GlobalNavbar() {
     <>
     {/* Desktop Navigation */}
     <nav className="hidden md:flex fixed top-0 w-full items-center justify-between px-8 py-6 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-white/5">
-      <Link href="/" className="text-lg font-bold tracking-tighter hover:opacity-75 transition-opacity">
-        Gülpembe Çolak
+      <Link href="/" className="group flex items-center gap-3 hover:opacity-100 transition-opacity">
+        <div className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center font-black text-sm tracking-tighter shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+          GÇ
+        </div>
+        <span className="font-bold tracking-widest text-xs uppercase hidden sm:block text-gray-500 group-hover:text-white transition-colors">Portfolio</span>
       </Link>
       <div className="flex gap-8 text-xs tracking-widest uppercase items-center">
         <Link 
