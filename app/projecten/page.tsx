@@ -4,19 +4,19 @@ import Link from 'next/link'
 
 const projects = [
   { 
-    id: 'p1', 
+    id: 'project-alpha', 
     title: 'Project Alpha', 
     short: 'Sleek mobile app UI interaction design showcase',
     image: '/project1.png'
   },
   { 
-    id: 'p2', 
+    id: 'project-beta', 
     title: 'Project Beta', 
     short: 'Modern web dashboard data visualization mockup',
     image: '/project2.png'
   },
   { 
-    id: 'p3', 
+    id: 'project-gamma', 
     title: 'Project Gamma', 
     short: 'E-commerce fashion website design mockup',
     image: '/project3.png'
