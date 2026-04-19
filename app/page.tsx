@@ -36,7 +36,7 @@ export default function Page() {
           Gülpembe Çolak
         </h1>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed">
-          Merhaba! Ben Gülpembe. Kullanıcı deneyimini güçlendiren, görsel estetik ile veriyi buluşturan etkileşimli çözümler tasarlıyorum.
+          Hi there! I'm Gülpembe. I design interactive solutions that enhance user experience, seamlessly blending visual aesthetics with powerful data.
         </p>
       </section>
 
@@ -44,10 +44,10 @@ export default function Page() {
       <section className="px-6 py-24 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Projecten</h2>
-            <p className="text-gray-400 max-w-xl text-center mb-8">Een selectie van mijn recente werk in digitaal design, UI/UX en data visualisatie.</p>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">Projects</h2>
+            <p className="text-gray-400 max-w-xl text-center mb-8">A selection of my recent work bridging digital design, UI/UX, and data visualization.</p>
             <Link href="/projecten" className="text-sm font-bold uppercase tracking-widest border-b border-gray-600 pb-1 text-gray-400 hover:text-white hover:border-white transition-colors">
-              Alle Projecten Bekijken
+              View All Projects
             </Link>
           </div>
           
@@ -80,7 +80,7 @@ export default function Page() {
                     href={`/projecten/${p.id}`}
                     className="w-full py-4 rounded-xl bg-white text-black font-bold text-sm tracking-wide hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
                   >
-                    Bekijk project
+                    View project
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
@@ -96,15 +96,15 @@ export default function Page() {
       <section className="px-6 py-32 flex flex-col items-center justify-center text-center bg-gradient-to-b from-[#050505] to-[#111]">
         <div className="max-w-3xl mx-auto px-8 py-16 bg-white/[0.03] border border-white/10 rounded-3xl backdrop-blur-sm relative overflow-hidden">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-white/5 to-transparent pointer-events-none opacity-50"></div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight relative z-10">Klaar om samen te werken?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight relative z-10">Ready to collaborate?</h2>
           <p className="text-gray-400 mb-10 text-lg relative z-10">
-            İster yeni bir proje, ister sadece bir "merhaba" demek için iletişime geçin. Tasarımda yeni ufuklar keşfetmek için sabırsızlanıyorum.
+            Whether you have a new project in mind or just want to say hi, feel free to reach out. I'm always excited to explore new horizons in design together!
           </p>
           <Link 
             href="/contact"
             className="inline-block relative z-10 px-10 py-5 rounded-full bg-white text-black font-extrabold tracking-widest uppercase hover:scale-105 hover:bg-gray-200 transition-all shadow-[0_0_40px_rgba(255,255,255,0.2)]"
           >
-            Neem contact op
+            Get in touch
           </Link>
         </div>
       </section>

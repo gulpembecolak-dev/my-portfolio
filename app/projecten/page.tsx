@@ -27,9 +27,9 @@ export default function ProjectenPage() {
   return (
     <main className="min-h-screen pt-40 pb-20 px-6 bg-[#050505]">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">Alle Projecten</h1>
+        <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight">All Projects</h1>
         <p className="text-gray-400 mb-16 text-lg max-w-2xl leading-relaxed">
-          Hier vind je een uitgebreider overzicht van mijn interactieve projecten. Keşfetmek istediğin projenin detaylarına gitmek için kartlara tıklayabilirsin.
+          Here you'll find a comprehensive overview of my interactive projects. Click on any card below to dive deep into the design details.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -58,7 +58,7 @@ export default function ProjectenPage() {
                     href={`/projecten/${p.id}`}
                     className="w-full py-4 rounded-xl bg-white/10 text-white border border-white/20 font-bold text-sm tracking-wide hover:bg-white hover:text-black transition-colors flex items-center justify-center gap-2"
                   >
-                    Details bekijken
+                    View details
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
