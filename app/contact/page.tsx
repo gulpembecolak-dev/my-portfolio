@@ -1,23 +1,35 @@
 // app/contact/page.tsx
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function ContactPage() {
+  const router = useRouter()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isExiting, setIsExiting] = useState(false)
 
   function submitContact(e: React.FormEvent) {
     e.preventDefault()
     setIsSubmitted(true)
+    
+    // Smooth transition logic: wait 3 seconds, trigger fade out, then navigate home
+    setTimeout(() => {
+      setIsExiting(true)
+      setTimeout(() => {
+        router.push('/')
+        router.refresh() // Ensures the home page is at the very top and fresh
+      }, 600) // Duration of the fade-out
+    }, 2500) // How long to read the success message
   }
 
   return (
     <main className="min-h-screen pt-32 pb-24 px-6 flex flex-col items-center justify-center bg-[#050505] selection:bg-white/30">
       <div className="w-full max-w-4xl relative">
         {isSubmitted ? (
-          <div className="flex flex-col items-center justify-center text-center py-20 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+          <div className={`flex flex-col items-center justify-center text-center py-20 transition-all duration-700 ease-in-out ${isExiting ? 'opacity-0 translate-y-8 scale-95' : 'animate-in fade-in slide-in-from-bottom-8 duration-1000 opacity-100'}`}>
             <div className="w-24 h-24 bg-white text-black rounded-full flex items-center justify-center mb-10 shadow-[0_0_60px_rgba(255,255,255,0.4)]">
               <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
