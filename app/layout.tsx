@@ -2,6 +2,7 @@
 import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 import GlobalNavbar from '../components/GlobalNavbar';
+import Link from 'next/link';
 
 export const metadata = {
   title: "Gülpembe Çolak - Interaction Designer",
